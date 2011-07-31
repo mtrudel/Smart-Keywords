@@ -3,28 +3,304 @@
 <plist version="1.0">
 <array>
 	<dict>
-		<key>Key</key>
-		<string>openOptions</string>
 		<key>Title</key>
-		<string>Smart Keyword Options</string>
+		<string>Keyword 1</string>
 		<key>Type</key>
 		<string>Group</string>
 	</dict>
 	<dict>
 		<key>DefaultValue</key>
-		<false/>
+		<string>wiki</string>
 		<key>Key</key>
-		<string>openOptions</string>
+		<string>keyword1</string>
 		<key>Title</key>
-		<string>Click here to set Smart Keywords options</string>
+		<string>Keyword</string>
 		<key>Type</key>
-		<string>CheckBox</string>
+		<string>TextField</string>
 	</dict>
 	<dict>
 		<key>DefaultValue</key>
-		<string>{"wiki":"http://en.wikipedia.org/w/index.php?title=Special:Search&amp;search=%s","amazon":"http://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&amp;field-keywords=%s&amp;x=0&amp;y=0","maps":"http://maps.google.com/maps?q=%s"} </string>
+		<string>http://en.wikipedia.org/w/index.php?title=Special:Search&amp;search=%s</string>
 		<key>Key</key>
-		<string>mappings</string>
+		<string>url1</string>
+		<key>Title</key>
+		<string>URL</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
+	<dict>
+		<key>Type</key>
+		<string>Separator</string>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Keyword 2</string>
+		<key>Type</key>
+		<string>Group</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string>amazon</string>
+		<key>Key</key>
+		<string>keyword2</string>
+		<key>Title</key>
+		<string>Keyword</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string>http://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&amp;field-keywords=%s&amp;x=0&amp;y=0</string>
+		<key>Key</key>
+		<string>url2</string>
+		<key>Title</key>
+		<string>URL</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
+	<dict>
+		<key>Type</key>
+		<string>Separator</string>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Keyword 3</string>
+		<key>Type</key>
+		<string>Group</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string>maps</string>
+		<key>Key</key>
+		<string>keyword3</string>
+		<key>Title</key>
+		<string>Keyword</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string>http://maps.google.com/maps?q=%s</string>
+		<key>Key</key>
+		<string>url3</string>
+		<key>Title</key>
+		<string>URL</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
+	<dict>
+		<key>Type</key>
+		<string>Separator</string>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Keyword 4</string>
+		<key>Type</key>
+		<string>Group</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string>youtube</string>
+		<key>Key</key>
+		<string>keyword4</string>
+		<key>Title</key>
+		<string>Keyword</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string>http://www.youtube.com/results?search_query=%s</string>
+		<key>Key</key>
+		<string>url4</string>
+		<key>Title</key>
+		<string>URL</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
+	<dict>
+		<key>Type</key>
+		<string>Separator</string>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Keyword 5</string>
+		<key>Type</key>
+		<string>Group</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string>img</string>
+		<key>Key</key>
+		<string>keyword5</string>
+		<key>Title</key>
+		<string>Keyword</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string>http://images.google.com/images?q=%s</string>
+		<key>Key</key>
+		<string>url5</string>
+		<key>Title</key>
+		<string>URL</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
+	<dict>
+		<key>Type</key>
+		<string>Separator</string>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Keyword 6</string>
+		<key>Type</key>
+		<string>Group</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string></string>
+		<key>Key</key>
+		<string>keyword6</string>
+		<key>Title</key>
+		<string>Keyword</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string></string>
+		<key>Key</key>
+		<string>url6</string>
+		<key>Title</key>
+		<string>URL</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
+	<dict>
+		<key>Type</key>
+		<string>Separator</string>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Keyword 7</string>
+		<key>Type</key>
+		<string>Group</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string></string>
+		<key>Key</key>
+		<string>keyword7</string>
+		<key>Title</key>
+		<string>Keyword</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string></string>
+		<key>Key</key>
+		<string>url7</string>
+		<key>Title</key>
+		<string>URL</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
+	<dict>
+		<key>Type</key>
+		<string>Separator</string>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Keyword 8</string>
+		<key>Type</key>
+		<string>Group</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string></string>
+		<key>Key</key>
+		<string>keyword8</string>
+		<key>Title</key>
+		<string>Keyword</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string></string>
+		<key>Key</key>
+		<string>url8</string>
+		<key>Title</key>
+		<string>URL</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
+	<dict>
+		<key>Type</key>
+		<string>Separator</string>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Keyword 9</string>
+		<key>Type</key>
+		<string>Group</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string></string>
+		<key>Key</key>
+		<string>keyword9</string>
+		<key>Title</key>
+		<string>Keyword</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string></string>
+		<key>Key</key>
+		<string>url9</string>
+		<key>Title</key>
+		<string>URL</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
+	<dict>
+		<key>Type</key>
+		<string>Separator</string>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Keyword 10</string>
+		<key>Type</key>
+		<string>Group</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string></string>
+		<key>Key</key>
+		<string>keyword10</string>
+		<key>Title</key>
+		<string>Keyword</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string></string>
+		<key>Key</key>
+		<string>url10</string>
+		<key>Title</key>
+		<string>URL</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
+	<dict>
+		<key>Type</key>
+		<string>Separator</string>
 	</dict>
 </array>
 </plist>

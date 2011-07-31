@@ -2,30 +2,38 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <script type="text/javascript" charset="utf-8">
-    function interceptRequest(event) {
-      var match = event.url.match(/http:\/\/(\w+)%20(.*)\//)
 
-      if (match) {
-        var mappings = JSON.parse(safari.extension.settings.mappings)
-        if (mappings[match[1]]) {
-          event.preventDefault()
-          var newTab = safari.application.activeBrowserWindow.activeTab
-          newTab.url = mappings[match[1]].replace( '%s', match[2])
+    (function() {
+      // Make our mappings function local
+      var mappings = {}
+
+      function computeMappings() {
+        mappings = {}
+        for (var i = 1; i <= 10; i++) {
+          mappings[safari.extension.settings[ 'keyword' + i ]] = safari.extension.settings[ 'url' + i ]
         }
       }
-    }
 
-    safari.application.addEventListener("beforeNavigate", interceptRequest);
+      // Compute them once at startup
+      computeMappings()
 
-    // Open Options page upon settings checkbox click.
-    safari.extension.settings.openOptions = false;
-    safari.extension.settings.addEventListener("change", function(e) {
-      if (e.key == 'openOptions') {       
-        var tab = safari.application.openBrowserWindow().activeTab;
-        tab.url = safari.extension.baseURI + "options.html"
-        tab.page.dispatchMessage('test', 'asdf')
-      }
-    }, false);
+      // And make sure that we recompute them every time our settings change
+      safari.extension.settings.addEventListener("change", computeMappings, false)
+
+      // Register the listener that actually does most of our magic
+      safari.application.addEventListener("beforeNavigate", function interceptRequest(event) {
+        var match = event.url.match(/http:\/\/(\w+)%20(.*)\//)
+
+        if (match) {
+          if (mappings[match[1]]) {
+            event.preventDefault()
+            var newTab = safari.application.activeBrowserWindow.activeTab
+            newTab.url = mappings[match[1]].replace( '%s', match[2])
+          }
+        }
+      })
+    })()
+
   </script>
 </head>
 <body>
