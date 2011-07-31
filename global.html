@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <script type="text/javascript" charset="utf-8">
+    function interceptRequest(event) {
+      var match = event.url.match(/http:\/\/(\w+)%20(.*)\//)
+
+      if (match) {
+        var mappings = JSON.parse(safari.extension.settings.mappings)
+        if (mappings[match[1]]) {
+          event.preventDefault()
+          var newTab = safari.application.activeBrowserWindow.activeTab
+          newTab.url = mappings[match[1]].replace( '%s', match[2])
+        }
+      }
+    }
+
+    safari.application.addEventListener("beforeNavigate", interceptRequest);
+
+    // Open Options page upon settings checkbox click.
+    safari.extension.settings.openOptions = false;
+    safari.extension.settings.addEventListener("change", function(e) {
+      if (e.key == 'openOptions') {       
+        var tab = safari.application.openBrowserWindow().activeTab;
+        tab.url = safari.extension.baseURI + "options.html"
+        tab.page.dispatchMessage('test', 'asdf')
+      }
+    }, false);
+  </script>
+</head>
+<body>
+</body>
+</html>

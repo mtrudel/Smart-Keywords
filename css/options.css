@@ -1,0 +1,11 @@
+body {
+	font-family: "Geneva";
+}
+
+#table {
+	margin-top: 20px;
+}
+
+#table table {
+	width: 100%;
+}
