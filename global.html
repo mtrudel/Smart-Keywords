@@ -10,7 +10,7 @@
       function computeMappings() {
         mappings = {}
         for (var i = 1; i <= 10; i++) {
-          mappings[safari.extension.settings[ 'keyword' + i ]] = safari.extension.settings[ 'url' + i ]
+          mappings[ safari.extension.settings[ 'keyword' + i ]] = safari.extension.settings[ 'url' + i ]
         }
       }
 
@@ -18,17 +18,16 @@
       computeMappings()
 
       // And make sure that we recompute them every time our settings change
-      safari.extension.settings.addEventListener("change", computeMappings, false)
+      safari.extension.settings.addEventListener( 'change', computeMappings, false )
 
       // Register the listener that actually does most of our magic
-      safari.application.addEventListener("beforeNavigate", function interceptRequest(event) {
-        var match = event.url.match(/http:\/\/(\w+)%20(.*)\//)
+      safari.application.addEventListener( 'beforeNavigate', function( event ) {
+        var match = event.url.match( /http:\/\/(\w+)%20(.*)\// )
 
-        if (match) {
-          if (mappings[match[1]]) {
+        if ( match ) {
+          if ( mappings[ match[ 1 ]] ) {
             event.preventDefault()
-            var newTab = safari.application.activeBrowserWindow.activeTab
-            newTab.url = mappings[match[1]].replace( '%s', match[2])
+            safari.application.activeBrowserWindow.activeTab.url = mappings[ match[ 1 ]].replace( '%s', match[ 2 ] )
           }
         }
       })
