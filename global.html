@@ -27,16 +27,13 @@
       // Register the listener that actually does most of our magic
       safari.application.addEventListener( 'beforeNavigate', function( event ) {
         var match = event.url.match( /http:\/\/(\w+)%20(.*)\// )
-        if ( match && mappings[ match[ 1 ]] ) {
-          // Do we match 'keyword searchterms'?
-          event.preventDefault()
-          safari.application.activeBrowserWindow.activeTab.url = mappings[ match[ 1 ]].replace( '%s', match[ 2 ] )
-        } else if ( actlikeomnibar ) {
-          match = event.url.match( /http:\/\/(\w+|(\w|\.?%20)+)\/$/ )
-          if ( match ) {
-            // Maybe we match 'searchterm' where searchterm isn't a url?
+        if ( match ) {
+          if ( mappings[ match[ 1 ]] ) {
             event.preventDefault()
-            safari.application.activeBrowserWindow.activeTab.url = defaultsearchengine.replace( '%s', match[ 1 ] )
+            safari.application.activeBrowserWindow.activeTab.url = mappings[ match[ 1 ]].replace( '%s', match[ 2 ] )
+          } else if ( actlikeomnibar && match[ 1 ].indexOf('/') == -1 ) {
+            event.preventDefault()
+            safari.application.activeBrowserWindow.activeTab.url = defaultsearchengine.replace( '%s', match[ 1 ]  + '%20' + match[ 2 ] )
           }
         }
       })
