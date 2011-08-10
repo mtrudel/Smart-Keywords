@@ -20,7 +20,7 @@
 	</dict>
 	<dict>
 		<key>DefaultValue</key>
-		<string>http://google.com/?q=%s</string>
+		<string>http://google.com/search?q=%s</string>
 		<key>Key</key>
 		<string>defaultsearchengine</string>
 		<key>Title</key>
