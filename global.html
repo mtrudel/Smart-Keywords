@@ -5,9 +5,13 @@
 
     (function() {
       // Make our settings variables function-local
+      var actlikeomnibar = true
+      var defaultsearchengine
       var mappings = {}
 
       function updatePreferences() {
+        actlikeomnibar = safari.extension.settings[ 'actlikeomnibar' ]
+        defaultsearchengine = safari.extension.settings[ 'defaultsearchengine' ]
         mappings = {}
         for (var i = 1; i <= 10; i++) {
           mappings[ safari.extension.settings[ 'keyword' + i ]] = safari.extension.settings[ 'url' + i ]
