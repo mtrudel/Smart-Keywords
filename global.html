@@ -26,7 +26,7 @@
 
       // Register the listener that actually does most of our magic
       safari.application.addEventListener( 'beforeNavigate', function( event ) {
-        var match = event.url.match( /http:\/\/(\w+)%20(.*)\// )
+        var match = event.url.match( /http:\/\/([\w\.]+)%20(.*)\// )
         if ( match ) {
           if ( mappings[ match[ 1 ]] ) {
             event.preventDefault()
