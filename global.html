@@ -4,21 +4,21 @@
   <script type="text/javascript" charset="utf-8">
 
     (function() {
-      // Make our mappings function-local
+      // Make our settings variables function-local
       var mappings = {}
 
-      function computeMappings() {
+      function updatePreferences() {
         mappings = {}
         for (var i = 1; i <= 10; i++) {
           mappings[ safari.extension.settings[ 'keyword' + i ]] = safari.extension.settings[ 'url' + i ]
         }
       }
 
-      // Compute them once at startup
-      computeMappings()
+      // Compute our preferences once at startup
+      updatePreferences()
 
       // And make sure that we recompute them every time our settings change
-      safari.extension.settings.addEventListener( 'change', computeMappings, false )
+      safari.extension.settings.addEventListener( 'change', updatePreferences, false )
 
       // Register the listener that actually does most of our magic
       safari.application.addEventListener( 'beforeNavigate', function( event ) {
