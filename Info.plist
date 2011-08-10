@@ -38,6 +38,8 @@
 			<string>All</string>
 		</dict>
 	</dict>
+	<key>Update Manifest URL</key>
+	<string>https://raw.github.com/mtrudel/Smart-Keywords/master/version.plist</string>
 	<key>Website</key>
 	<string>http://www.longbeard.org/2011/08/07/Introducing-Smart-Keywords.html</string>
 </dict>
