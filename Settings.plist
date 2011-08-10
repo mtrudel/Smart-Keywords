@@ -4,6 +4,36 @@
 <array>
 	<dict>
 		<key>Title</key>
+		<string>Omnibar Settings</string>
+		<key>Type</key>
+		<string>Group</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<true/>
+		<key>Key</key>
+		<string>actlikeomnibar</string>
+		<key>Title</key>
+		<string>Act Like Omnibar (handle searches without a keyword)</string>
+		<key>Type</key>
+		<string>CheckBox</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string>http://google.com/?q=%s</string>
+		<key>Key</key>
+		<string>defaultsearchengine</string>
+		<key>Title</key>
+		<string>Default Omnibar Search URL</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
+	<dict>
+		<key>Type</key>
+		<string>Separator</string>
+	</dict>
+	<dict>
+		<key>Title</key>
 		<string>Keyword 1</string>
 		<key>Type</key>
 		<string>Group</string>
